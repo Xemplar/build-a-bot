@@ -1,0 +1,15 @@
+{
+  "name": "buildabot",
+  "version": "1.0.0",
+  "description": "Discord bot builder with user interface",
+  "devDependencies": {
+    "electron": "^11.3.0",
+    "typescript": "^4.2.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && electron index.js"
+  },
+  "author": "Tobi",
+  "license": "ISC"
+}

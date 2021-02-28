@@ -1,0 +1,4 @@
+node_modules
+
+# This is to cut out compiled stuff
+*.js
