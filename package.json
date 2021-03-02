@@ -11,5 +11,10 @@
     "start": "npm run build && electron index.js"
   },
   "author": "Tobi",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.5.5",
+    "jquery": "^3.5.1",
+    "node-html-parser": "^3.0.3"
+  }
 }

@@ -3,16 +3,17 @@ import {
     BrowserWindow
 } from 'electron'
 
+import path = require('path')
+
+import ts_remover_html from './lib/parse_html_hrefs'
 
 var MainWindow: BrowserWindow;
 
-const screen: Function = function (name: string): {index: string} {
-    return {
-        index: `./src/screens/${name}/index.html`
-    }
-}
-
-const CreateWindow: Function = async function (path?: string): Promise<void> {
+/**
+ * Returns file path for a screen html file
+ * @param name 
+ */
+const CreateWindow: Function = async function (path: string = "src/screen/index.html"): Promise<void> {
     if (!MainWindow) {
         MainWindow = new BrowserWindow({
             width: 800,
@@ -26,10 +27,11 @@ const CreateWindow: Function = async function (path?: string): Promise<void> {
             }
         })
     }
-    MainWindow.loadFile(path || screen('main').index)
+    MainWindow.loadFile(path)
 }
 
-app.on('ready', () => {
+app.on('ready', async () => {
+    await ts_remover_html(__dirname)
     CreateWindow()
 })
 
