@@ -33,3 +33,5 @@ ChangeView(screens.hello_world, async () => {
         ChangeView(screens.test)
     }, 5000)
 })
+
+// yinkies tobi [insert fuckboy face]
